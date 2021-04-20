@@ -3,6 +3,8 @@ blacklist:
 
 whitelist:
   'google'
+  'amazonaws'
+  'windows'
 
 tlds:
   'gq'

@@ -1,5 +1,8 @@
-domains:
-  # todo
+blacklist:
+  'login'
+
+whitelist:
+  'google'
 
 tlds:
-  # todo
+  'gq'

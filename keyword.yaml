@@ -3,15 +3,59 @@ blacklist:
   'account':
 
 whitelist:
-  'google':
-  'amazonaws':
-  'amazongamelift':
-  'windows':
-  'microsoftazurelogicapps':
-  'netflix':
-  'ibm':
-  'appdomain':
-  'azure':
+  'google': 25
+  'amazonaws': 25
+  'amazongamelift': 25
+  'windows': 25
+  'microsoft': 25
+  'microsoftazurelogicapps': 25
+  'netflix': 25
+  'appdomain': 25
+  'azure': 25
+  'facebook': 25
+  'vercel': 25
+  'whatsapp': 25
 
 tlds:
   'gq':
+
+generic:
+# Generic suspicious
+    'login': 25
+    'log-in': 25
+    'sign-in': 25
+    'signin': 25
+    'account': 25
+    'verification': 25
+    'verify': 25
+    'webscr': 25
+    'password': 25
+    'credential': 25
+    'support': 25
+    'activity': 25
+    'security': 25
+    'update': 25
+    'authentication': 25
+    'authenticate': 25
+    'authorize': 25
+    'wallet': 25
+    'alert': 25
+    'purchase': 25
+    'transaction': 25
+    'recover': 25
+    'unlock': 25
+    'confirm': 20
+    'live': 15
+    'office': 15
+    'service': 15
+    'manage': 15
+    'portal': 15
+    'invoice': 15
+    'secure': 10
+    'customer': 10
+    'client': 10
+    'bill': 10
+    'online': 10
+    'safe': 10
+    'form': 10
+

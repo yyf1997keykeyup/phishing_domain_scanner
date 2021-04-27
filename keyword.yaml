@@ -1,10 +1,17 @@
 blacklist:
-  'login'
+  'login':
+  'account':
 
 whitelist:
-  'google'
-  'amazonaws'
-  'windows'
+  'google':
+  'amazonaws':
+  'amazongamelift':
+  'windows':
+  'microsoftazurelogicapps':
+  'netflix':
+  'ibm':
+  'appdomain':
+  'azure':
 
 tlds:
-  'gq'
+  'gq':

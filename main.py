@@ -16,17 +16,21 @@ def get_phishing_score(domain):
     sub_domains = domain.split('.')
 
     if len(sub_domains) < 2:
-        return
+        return score
 
     top_level_domain = sub_domains[-1]
     second_level_domain = sub_domains[-2]
 
     # TODO: avoid good domains (e.g. google.com)
-    if second_level_domain in keyword_yaml['whitelist']:
-        return
+    if second_level_domain in keyword['whitelist']:
+        return score
+
+    for sub_domain in sub_domains:
+        if sub_domain in keyword['blacklist']:
+            score += 75
 
     # TODO: score by top_level_domain in the keyword.yaml
-    if top_level_domain in keyword_yaml['tlds']:
+    if top_level_domain in keyword['tlds']:
         score += 10
 
     return score
@@ -38,10 +42,10 @@ def listen_func(message, _):
 
     all_domains = message['data']['leaf_cert']['all_domains']
     for domain in all_domains:
-        print(domain)
         phishing_score = get_phishing_score(domain.lower())
 
         if phishing_score >= 75:
+            print(domain)
             with open(log_output, 'a') as f:
                 f.write("{}\n".format(domain))
 

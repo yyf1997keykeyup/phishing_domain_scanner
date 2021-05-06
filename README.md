@@ -31,6 +31,9 @@ Filter: Since there are ~20M certificates we can get from the feed, and most of 
 
 
 SVM Model: We collected a list of phishing domains and a list of ordinary domains, and extracted 12 features for each domain. After encoding them into one hot encoders, we used them to train a svm model.
+
+![Trainning Process](./pictures/training.png)
+
 * 12 features includes:
     1. Whether the domain name is too long.
     2. Whether the domain name contains the symbol “@”.
@@ -45,9 +48,9 @@ SVM Model: We collected a list of phishing domains and a list of ordinary domain
     11. Whether the domain has a good ranking in alexa website (https://www.alexa.com/siteinfo/).
     12. Whether the domain is in any DNS record by the help of  WHOIS.
 * The data we collected contains 500 ordinary domains and about 1500 phishing domains.
-* The SVM Model we trained achieves <strong>96-97% accuracy</strong>.
+* The SVM Model we trained achieves <strong>96.7% accuracy, 87% recall, 0.04 FPR</strong>.
 
-![Trainning Process](./pictures/training.png)
+![Trainning Result](./pictures/result.png)
 
 
 ## Have a try
@@ -64,3 +67,7 @@ then run:
 ```
 python test.py
 ```
+
+### Others:
+* To get features from domain name list, we called the get_features() function in the prepocess.py file.
+* To Train the svm model, we run the build_model.py. You can also checkout the notebook: build_model.ipynb.
